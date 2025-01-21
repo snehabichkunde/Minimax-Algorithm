@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Game Board -->
     <table>
         <tr>
             <td class="cell" id="0"></td>
@@ -29,6 +29,50 @@
         <div class="text"></div>
     </div>
     <button onclick="startGame()">Replay</button>
+
+    <!-- Information Section -->
+    <section id="minimax-info">
+        <h1>How the Minimax Algorithm Makes Decisions</h1>
+        <p>The Minimax algorithm evaluates all possible moves in a game, assigns scores to each potential outcome, and chooses the move with the best score for the AI. Here's an example:</p>
+    
+        <h2>Current Board:</h2>
+        <p id="example-board">
+            | X | O | X |<br>
+            | O | X |   |<br>
+            |   |   | O |
+        </p>
+    
+        <p>The AI's turn is next. It evaluates all empty spots and predicts the results of each possible move:</p>
+    
+        <ul>
+            <li>If the AI plays at position (2, 3), the board becomes:<br>
+                <p>| X | O | X |<br>
+                   | O | X |   |<br>
+                   |   | X | O |
+                </p>
+                The AI calculates the Minimax value for this move.
+            </li>
+            <li>For position (3, 2), the board becomes:<br>
+                <p>| X | O | X |<br>
+                   | O | X |   |<br>
+                   | O |   | O |
+                </p>
+                The AI calculates the Minimax value for this move.</li>
+        </ul>
+    
+        <h3>How the AI Decides:</h3>
+        <p>
+            1. It generates a tree of possible moves for each empty spot.<br>
+            2. For each move, it simulates the opponent's possible responses.<br>
+            3. The AI chooses the move that leads to the best possible outcome, minimizing the opponent's advantage.<br>
+            4. In this example, the AI identifies the best move as position (2, 3), leading to a win.
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Minimax" target="_blank" rel="noopener noreferrer">Learn More</a>
+    </section>
+    
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
