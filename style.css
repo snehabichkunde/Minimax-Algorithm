@@ -1,4 +1,22 @@
-/* Game Board Styles */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    background-color: #fff;
+}
+
 td {
     border: 2px solid #333;
     height: 100px;
@@ -10,59 +28,59 @@ td {
     cursor: pointer;
 }
 
-table {
-    border-collapse: collapse;
-    position: absolute;
-    left: 50%;
-    margin-left: -155px;
-    top: 50px;
-}
-
 .endgame {
     display: none;
-    width: 200px;
-    top: 120px;
-    background-color: rgba(205, 133, 63, 0.8);
-    position: absolute;
-    left: 50%;
-    margin-left: -100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     color: white;
-    font-size: 2em;
+    font-size: 24px;
+    padding: 20px;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; 
 }
 
 button {
-    position: absolute;
-    top: 420px;
-    left: 50%;
-    margin-left: -60px;
+    margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
 }
 
-#info {
-    margin-top: 500px;
+#minimax-info {
+    margin-top: 20px; 
     padding: 20px;
     font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #444;
-}
-#example-board {
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    font-weight: bold;
+    width: 90%; 
+    max-width: 900px; 
     text-align: left;
-    white-space: pre;
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 10px;
-    background-color: #f8f9fa;
+    color: #444;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
+    flex-grow: 1; 
+}
+
+#minimax-info h1,
+#minimax-info h2,
+#minimax-info h3 {
+    text-align: center;
+}
+
+#minimax-info p,
+#minimax-info ul {
+    text-align: left;
+}
+
+#example-board {
+    white-space: pre-wrap;
+    font-family: monospace;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    padding: 5px;
 }

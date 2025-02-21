@@ -5,9 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            align-items: center; /* Center horizontally */
+            font-family: sans-serif; /* Add a default font */
+            margin: 20px; /* Add some margin around the content */
+        }
+
+        table {
+            border-collapse: collapse; /* Collapse table borders */
+            margin-bottom: 20px; /* Add space below the table */
+        }
+
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .endgame {
+            margin-bottom: 20px; /* Add space below the result */
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        #minimax-info {
+            width: 80%; /* Occupy most of the width */
+            margin-top: 20px; /* Space above the info */
+            border: 1px solid #ccc; /* Add a border */
+            padding: 20px; /* Add some padding */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        #minimax-info h1, #minimax-info h2, #minimax-info h3 {
+          text-align: center; /* Center the headings */
+        }
+
+        #minimax-info p, #minimax-info ul {
+          text-align: left; /* Align text to the left */
+        }
+
+        #example-board {
+            white-space: pre-wrap; /* Preserve line breaks */
+            font-family: monospace; /* Use a monospace font */
+            margin: 10px auto; /* Center the example board */
+            border: 1px solid #ccc; /* Add a border */
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <!-- Game Board -->
     <table>
         <tr>
             <td class="cell" id="0"></td>
@@ -30,20 +88,19 @@
     </div>
     <button onclick="startGame()">Replay</button>
 
-    <!-- Information Section -->
     <section id="minimax-info">
         <h1>How the Minimax Algorithm Makes Decisions</h1>
         <p>The Minimax algorithm evaluates all possible moves in a game, assigns scores to each potential outcome, and chooses the move with the best score for the AI. Here's an example:</p>
-    
+
         <h2>Current Board:</h2>
         <p id="example-board">
             | X | O | X |<br>
             | O | X |   |<br>
             |   |   | O |
         </p>
-    
+
         <p>The AI's turn is next. It evaluates all empty spots and predicts the results of each possible move:</p>
-    
+
         <ul>
             <li>If the AI plays at position (2, 3), the board becomes:<br>
                 <p>| X | O | X |<br>
@@ -59,7 +116,7 @@
                 </p>
                 The AI calculates the Minimax value for this move.</li>
         </ul>
-    
+
         <h3>How the AI Decides:</h3>
         <p>
             1. It generates a tree of possible moves for each empty spot.<br>
@@ -69,9 +126,6 @@
         </p>
         <a href="https://en.wikipedia.org/wiki/Minimax" target="_blank" rel="noopener noreferrer">Learn More</a>
     </section>
-    
-
-
 
     <script src="script.js"></script>
 </body>
